@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <style type="text/css">
+        #form
+        {
+            width:inherit;
+            height:inherit;
+            margin:0;
+            padding:0;
+        }
+        .style1
+        {
+            font-family: "Times New Roman", Times, serif;
+            color: #FF0000;
+        }
+        .style2
+        {
+            color: #000099;
+        }
+        #SideBar
+        {
+            background-color: #FFCCCC;
+        }
+        .style3
+        {
+            font-size: small;
+            color: #FFFFFF;
+        }
+        .style4
+        {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id ="Container">
+        <div id="header">  
+  <h1 class ="Title">Online Resume Builder</h1>
+  <span class ="TagLine">Make resume in just 2 minutes ...</span>
+<ul class ="Menu">
+<li><a href ="Default.aspx">Home</a></li>
+<li><a href ="ThemeManager.aspx">Settings</a></li>
+<li><a href ="Feedback.aspx">Feedback</a></li>
+<li><a href ="AboutUS.aspx">AboutUs</a></li>
+<li><a href ="ContactUS.aspx">ContactUs</a></li>
+<li><a href ="FAQ.aspx">FAQ</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <asp:LoginView ID="LoginView1" runat="server">
+        <AnonymousTemplate>
+            Hello Visitor Please <asp:LoginStatus ID="LoginStatus1" runat="server"  />
+        </AnonymousTemplate>
+        <LoggedInTemplate>
+            Hello 
+            <b><u style="color: #fff;font-size: 24px"><asp:LoginName ID="LoginName1" runat="server"/></u></b> Good to see you... <asp:LoginStatus ID="LoginStatus2" runat="server" />
+        </LoggedInTemplate>
+    </asp:LoginView>
+</ul>
+
+  </div>
+
+        <div id="SideBar" align="center">
+            <p>
+                
+                
+                <asp:ImageButton ID="LinkButton1" runat="server" 
+                    ImageUrl="~/Images/HomeButton.png" onclick="LinkButton1_Click"></asp:ImageButton>
+                
+</p>
+            <p>
+                
+                
+                <asp:ImageButton ID="ImageButton1" runat="server" 
+                    ImageUrl="~/Images/LoginButton.png" onclick="LinkButton2_Click"></asp:ImageButton>
+                
+</p>
+            <p>
+                
+                
+                <asp:ImageButton ID="ImageButton2" runat="server" 
+                    ImageUrl="~/Images/RegisterButton.png" onclick="LinkButton3_Click"></asp:ImageButton>
+                    
+</p>
+            <p>
+                
+                
+                    <asp:ImageButton ID="ImageButton3" runat="server" 
+                    ImageUrl="~/Images/ResumeButton.png" onclick="LinkButton4_Click"></asp:ImageButton>
+                    
+</p>
+<p>
+                
+                
+                <asp:ImageButton ID="ImageButton5" runat="server" 
+                    ImageUrl="~/Images/videotipButton.png" onclick="ImageButton6_Click" Width="126px"></asp:ImageButton>
+                
+</p>
+            <p>
+                
+                
+                    <asp:ImageButton ID="ImageButton4" runat="server" 
+                    ImageUrl="~/Images/PdfButton.png" onclick="LinkButton5_Click" Height="45px"></asp:ImageButton>
+
+</p>
+<p>
+                
+                
+                <asp:ImageButton ID="ImageButton6" runat="server" 
+                    ImageUrl="~/Images/jobButton.png" onclick="ImageButton7_Click"></asp:ImageButton>
+                
+</p>
+      
+<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+<center style="background-color: #FFFF99"><span class="style2"><strong>Todays Date & Time</strong></span><br />
+    <asp:Label ID="Label1" runat="server" Text="Label" CssClass="style1"></asp:Label>
+    <br />
+    <asp:Label ID="Label2"
+        runat="server" Text="Label" CssClass="style1"></asp:Label></center>
+    </asp:ContentPlaceHolder>
+            
+</div>
+        <div id="Content">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+
+        <div id="Footer">
+            
+            <center><a href=""><span 
+                class="style4">copyright@</span><span class="style3">2015-16</span></a><br/>
+                <a href="AboutUS.aspx"><span class="style4">AboutUS</span></a>
+                </center>
+        
+        </div>
+    </form>
+</body>
+</html>
